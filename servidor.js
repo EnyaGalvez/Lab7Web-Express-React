@@ -31,38 +31,21 @@ app.get("/api/student", async (req, res) => {
   res.type("application/json").send(texto)
 })
 
+app.get("/api/status", (req, res) => {
+  res.json({
+    ok: true,
+    status: "online",
+    puerto: PORT
+  })
+})
 
-/*
-  if (req.url === "/api/status") {
-    const status = {
-      ok: true,
-      status: "online",
-      puerto: PORT
-    }
-    res.writeHead(200, { "Content-Type": "application/json" })
-    res.end(JSON.stringify(status, null, 2))
-    return
-  }
-
-  const respuesta404 = {
+app.use((req, res) => {
+  res.status(404).json({
     error: "Ruta no encontrada",
     rutaVisitada: req.url,
     mensaje: `La ruta "${req.url}" no existe en este servidor.`
-  }
-
-  res.writeHead(404, { "Content-Type": "application/json" })
-  res.end(JSON.stringify(respuesta404, null, 2))
+  })
 })
-
-server.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`)
-  console.log(`Rutas disponibles:`)
-  console.log(`  GET /`)
-  console.log(`  GET /info`)
-  console.log(`  GET /saludo`)
-  console.log(`  GET /api/student`)
-  console.log(`  GET /api/status`)
-})*/
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`)
