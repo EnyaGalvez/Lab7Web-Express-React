@@ -1,0 +1,24 @@
+{
+  "name": "lab7-express-react",
+  "version": "1.0.0",
+  "description": "Laboratorio 7: Express e Intro a React",
+  "main": "servidor.js",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnyaGalvez/Lab7Web-Express-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnyaGalvez/Lab7Web-Express-React/issues"
+  },
+  "homepage": "https://github.com/EnyaGalvez/Lab7Web-Express-React#readme"
+}
