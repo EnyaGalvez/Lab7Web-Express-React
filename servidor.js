@@ -21,23 +21,18 @@ app.get("/info", (req, res) => {
   res.json(info)
 })
 
+app.get("/saludo", (req, res) => {
+  res.type("text/plain").send(obtenerSaludo())
+})
+
+app.get("/api/student", async (req, res) => {
+  const filePath = path.join(process.cwd(), "datos.json")
+  const texto = await fs.readFile(filePath, "utf-8")
+  res.type("application/json").send(texto)
+})
+
 
 /*
-  if (req.url === "/saludo") {
-    const mensaje = obtenerSaludo()
-    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" })
-    res.end(mensaje)
-    return
-  }
-
-  if (req.url === "/api/student") {
-    const filePath = path.join(process.cwd(), "datos.json")
-    const texto = await fs.readFile(filePath, "utf-8")
-    res.writeHead(200, { "Content-Type": "application/json" })
-    res.end(texto)
-    return
-  }
-
   if (req.url === "/api/status") {
     const status = {
       ok: true,
