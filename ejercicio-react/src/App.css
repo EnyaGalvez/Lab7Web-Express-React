@@ -1,0 +1,94 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --button-hover: rgba(255, 255, 255, 0.1);
+  --bg-dark: #1a1a2e;
+  --panel-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--bg-dark);
+  color: white;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  width: 350px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.calculator:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 24px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.display {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  font-size: 2.5em;
+  text-align: right;
+  margin-bottom: 24px;
+  min-height: 80px;
+  word-wrap: break-word;
+  color: #fff;
+  font-weight: 200;
+}
+
+.button-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  background: var(--panel-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 1.25em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  background: var(--button-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:nth-child(4n), 
+button:last-child {
+  background: var(--primary-gradient);
+  border: none;
+  font-weight: bold;
+}
+
+button:nth-child(4n):hover, 
+button:last-child:hover {
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+}
