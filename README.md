@@ -70,3 +70,6 @@ Con `http`, el bloque final es solo una sentencia if más dentro del callback. N
 #### 4. Escabilidad y organización
 Con `http` a medida que crece el codigo, el único callback se convierte en un bloque de `if/else` muy largo y difícil de mantener. <br><br>
 En cambio, express permite dividir las rutas en archivos separados usando `express.Router()`, lo que mantiene el código organizado sin importar cuántas rutas tenga el proyecto.
+
+#### Carpeta de videos
+Solo Video de express: [https://drive.google.com/drive/folders/1KE33djkg8UzNWTpCM8uRbKHCLl2RT21p?usp=sharing](https://drive.google.com/drive/folders/1KE33djkg8UzNWTpCM8uRbKHCLl2RT21p?usp=sharing)
